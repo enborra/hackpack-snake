@@ -1,7 +1,13 @@
+
+// Modified with love from Straker's great starter work:
+// https://gist.github.com/straker/ff00b4b49669ad3dec890306d348adc4
+
 var canvas = document.getElementById('game');
 var context = canvas.getContext('2d');
 var grid = 16;
 var count = 0;
+
+var _score = 0;
 
 var snake = {
   x: 160,
@@ -76,6 +82,8 @@ function loop() {
         // pass
       }
 
+      _score += 1;
+
       snake.maxCells++;
       // canvas is 400x400 which is 25x25 grids
       apple.x = getRandomInt(0, 25) * grid;
@@ -93,9 +101,14 @@ function loop() {
         snake.dy = 0;
         apple.x = getRandomInt(0, 25) * grid;
         apple.y = getRandomInt(0, 25) * grid;
+
+        _score = 0;
       }
     }
   });
+  context.fillStyle="#fff";
+  context.font = "30px press_start_2pregular";
+  context.fillText(_score, 10, 50);
 }
 
 // listen to keyboard events to move the snake
