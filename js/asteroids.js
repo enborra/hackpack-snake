@@ -47,7 +47,7 @@ document.addEventListener('keydown', function(e) {
   if( e.which === 32 ){
     document.location = 'https://hackpack-server.herokuapp.com';
   }
-}
+});
 
 Matrix = function (rows, columns) {
   var i, j;
