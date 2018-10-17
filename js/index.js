@@ -89,7 +89,7 @@ function loop() {
         apple.y = getRandomInt(0, 25) * grid;
 
         try {
-          pywebview.showLightsParams({'demo': 37, 'repeat': 1});
+          pywebview.api.showLightsParams({'demo': 37, 'repeat': 1});
 
         } catch(ex){
           // pass
@@ -108,7 +108,7 @@ document.addEventListener('keydown', function(e) {
   // left arrow key
 
   if( e.which === 32 && snake.dx === 0 ){
-    window.location.replace('https://hackpack-server.herokuapp.com');
+    pywebview.api.load_url('https://hackpack-server.herokuapp.com');
   }
 
   if (e.which === 37 && snake.dx === 0) {
