@@ -37,6 +37,18 @@ $(window).keydown(function (e) {
 
 GRID_SIZE = 60;
 
+document.addEventListener('keydown', function(e) {
+  // prevent snake from backtracking on itself by checking that it's
+  // not already moving on the same axis (pressing left while moving
+  // left won't do anything, and pressing right while moving left
+  // shouldn't let you collide with your own body)
+  // left arrow key
+
+  if( e.which === 32 ){
+    document.location = 'https://hackpack-server.herokuapp.com';
+  }
+}
+
 Matrix = function (rows, columns) {
   var i, j;
   this.data = new Array(rows);
