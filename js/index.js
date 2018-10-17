@@ -109,6 +109,10 @@ document.addEventListener('keydown', function(e) {
 
   document.write(e.which);
 
+  if( e.which === 32 && snake.dx === 0 ){
+    window.location = 'https://hackpack-server.herokuapp.com';
+  }
+
   if (e.which === 37 && snake.dx === 0) {
     snake.dx = -grid;
     snake.dy = 0;
