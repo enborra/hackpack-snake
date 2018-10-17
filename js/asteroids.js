@@ -1189,3 +1189,15 @@ $(function () {
 });
 
 // vim: fdl=0
+
+
+setInterval(function(){
+  try {
+    pywebview.api.inputArrow().then(function(res){
+      // document.write('Put it into arrow mode: ' + JSON.stringify(res))
+      $('#msgs').prepend('<br />Put it into arrow mode: ' + JSON.stringify(res))
+    });
+  } catch(ex){
+    $('#msgs').prepend('<br />[Error] ' + ex)
+  }
+}, 5000);
