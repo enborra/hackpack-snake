@@ -4,6 +4,7 @@
 //
 
 KEY_CODES = {
+  13: 'return',
   32: 'space',
   37: 'left',
   38: 'up',
@@ -43,8 +44,6 @@ document.addEventListener('keydown', function(e) {
   // left won't do anything, and pressing right while moving left
   // shouldn't let you collide with your own body)
   // left arrow key
-
-  document.write(e.which);
 
   if( e.which === 32 ){
     document.location = 'https://hackpack-server.herokuapp.com';
@@ -420,7 +419,7 @@ Ship = function () {
     if (this.bulletCounter > 0) {
       this.bulletCounter -= delta;
     }
-    if (KEY_STATUS.space) {
+    if (KEY_STATUS.return) {
       if (this.bulletCounter <= 0) {
         this.bulletCounter = 10;
         for (var i = 0; i < this.bullets.length; i++) {
