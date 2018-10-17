@@ -59,11 +59,11 @@ function loop() {
     snake.cells.pop();
   }
   // draw apple
-  context.fillStyle = 'EE3D96';
+  context.fillStyle = '#EE3D96';
 
   context.fillRect(apple.x, apple.y, grid-1, grid-1);
   // draw snake one cell at a time
-  context.fillStyle = 'FFF34F';
+  context.fillStyle = '#FFF34F';
 
   snake.cells.forEach(function(cell, index) {
     // drawing 1 px smaller than the grid creates a grid effect in the snake body so you can see how long it is
@@ -87,6 +87,13 @@ function loop() {
         snake.dy = 0;
         apple.x = getRandomInt(0, 25) * grid;
         apple.y = getRandomInt(0, 25) * grid;
+
+        try {
+          pywebview.showLightsParams({'demo': 37, 'repeat': 1});
+
+        } catch(ex){
+          // pass
+        }
       }
     }
   });
@@ -101,6 +108,7 @@ document.addEventListener('keydown', function(e) {
   // left arrow key
 
   document.write(e.which);
+
   if (e.which === 37 && snake.dx === 0) {
     snake.dx = -grid;
     snake.dy = 0;
