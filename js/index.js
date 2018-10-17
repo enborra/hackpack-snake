@@ -92,7 +92,7 @@ function loop() {
           pywebview.api.showLightsParams({'demo': 37, 'repeat': 1});
 
         } catch(ex){
-          // pass
+          document.write(ex);
         }
       }
     }
