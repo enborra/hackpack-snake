@@ -411,7 +411,7 @@ Ship = function () {
         this.bulletCounter = 10;
         for (var i = 0; i < this.bullets.length; i++) {
           if (!this.bullets[i].visible) {
-            SFX.laser();
+            // SFX.laser();
             var bullet = this.bullets[i];
             var rad = ((this.rot-90) * Math.PI)/180;
             var vectorx = Math.cos(rad);
@@ -436,7 +436,7 @@ Ship = function () {
   };
 
   this.collision = function (other) {
-    SFX.explosion();
+    // SFX.explosion();
     Game.explosionAt(other.x, other.y);
     Game.FSM.state = 'player_died';
     this.visible = false;
@@ -539,7 +539,7 @@ BigAlien = function () {
           bullet.vel.x = 6 * vectorx;
           bullet.vel.y = 6 * vectory;
           bullet.visible = true;
-          SFX.laser();
+          // SFX.laser();
           break;
         }
       }
@@ -549,7 +549,7 @@ BigAlien = function () {
 
   BigAlien.prototype.collision = function (other) {
     if (other.name == "bullet") Game.score += 200;
-    SFX.explosion();
+    // SFX.explosion();
     Game.explosionAt(other.x, other.y);
     this.visible = false;
     this.newPosition();
@@ -655,7 +655,7 @@ Asteroid = function () {
   this.collidesWith = ["ship", "bullet", "bigalien", "alienbullet"];
 
   this.collision = function (other) {
-    SFX.explosion();
+    // SFX.explosion();
     if (other.name == "bullet") Game.score += 120 / this.scale;
     this.scale /= 3;
     if (this.scale > 0.5) {
