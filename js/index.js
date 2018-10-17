@@ -99,6 +99,8 @@ document.addEventListener('keydown', function(e) {
   // left won't do anything, and pressing right while moving left
   // shouldn't let you collide with your own body)
   // left arrow key
+
+  document.write(e.which);
   if (e.which === 37 && snake.dx === 0) {
     snake.dx = -grid;
     snake.dy = 0;
