@@ -1099,6 +1099,7 @@ $(function () {
     if (KEY_STATUS.g) {
       context.beginPath();
       for (var i = 0; i < gridWidth; i++) {
+        context.strokeStyle = "#ffffff";
         context.moveTo(i * GRID_SIZE, 0);
         context.lineTo(i * GRID_SIZE, Game.canvasHeight);
       }
