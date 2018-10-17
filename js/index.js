@@ -71,7 +71,7 @@ function loop() {
     // snake ate apple
     if (cell.x === apple.x && cell.y === apple.y) {
       try {
-        pywebview.api.showLights(24, 24);
+        pywebview.api.run_lights(24, 1);
       } catch(ex){
         // pass
       }
