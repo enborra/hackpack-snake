@@ -108,7 +108,7 @@ document.addEventListener('keydown', function(e) {
   // left arrow key
 
   if( e.which === 32 && snake.dx === 0 ){
-    window.location = 'https://hackpack-server.herokuapp.com';
+    window.location.replace('https://hackpack-server.herokuapp.com');
   }
 
   if (e.which === 37 && snake.dx === 0) {
