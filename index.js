@@ -9,8 +9,8 @@ app.get('/', function(req,res){
   res.sendFile(__dirname + '/index.htm');
 });
 
-app.get('/asteroids', function(req,res){
-  res.sendFile(__dirname + '/asteroids.htm');
-});
+// app.get('/asteroids', function(req,res){
+//   res.sendFile(__dirname + '/asteroids.htm');
+// });
 
 app.listen(port, () => console.log('Example  app listening on port $(port)!'))
