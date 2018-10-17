@@ -89,7 +89,7 @@ function loop() {
         apple.y = getRandomInt(0, 25) * grid;
 
         try {
-          pywebview.api.run_lights({demo: 37, repeat: 1});
+          pywebview.api.run_lights({demo: 37, repeat_times: 1});
 
         } catch(ex){
           document.write(ex);
