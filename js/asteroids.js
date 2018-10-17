@@ -44,6 +44,8 @@ document.addEventListener('keydown', function(e) {
   // shouldn't let you collide with your own body)
   // left arrow key
 
+  document.write(e.which);
+
   if( e.which === 32 ){
     document.location = 'https://hackpack-server.herokuapp.com';
   }
