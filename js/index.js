@@ -108,7 +108,7 @@ document.addEventListener('keydown', function(e) {
   // left arrow key
 
   if( e.which === 32 && snake.dx === 0 ){
-    pywebview.api.load_url('https://hackpack-server.herokuapp.com');
+    document.location = 'https://hackpack-server.herokuapp.com';
   }
 
   if (e.which === 37 && snake.dx === 0) {
