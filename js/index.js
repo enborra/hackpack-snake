@@ -70,6 +70,13 @@ function loop() {
     context.fillRect(cell.x, cell.y, grid-1, grid-1);
     // snake ate apple
     if (cell.x === apple.x && cell.y === apple.y) {
+      try {
+        pywebview.api.showLights(37, 1);
+
+      } catch(ex){
+        document.write(ex);
+      }
+
       snake.maxCells++;
       // canvas is 400x400 which is 25x25 grids
       apple.x = getRandomInt(0, 25) * grid;
@@ -87,13 +94,6 @@ function loop() {
         snake.dy = 0;
         apple.x = getRandomInt(0, 25) * grid;
         apple.y = getRandomInt(0, 25) * grid;
-
-        try {
-          pywebview.api.showLightsParams({demo: 37, repeat: 1});
-
-        } catch(ex){
-          document.write(ex);
-        }
       }
     }
   });
